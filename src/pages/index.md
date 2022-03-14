@@ -23,6 +23,13 @@ Adobe Substance 3D Automation API offers convenient ways to manage and run your 
 
 Read API documentation and download OpenAPI / Swagger specifications.
 
+## Tutorials
+
+[Learn how to author jobs](jobs/tutorial) 
+
+Read API documentation and download OpenAPI / Swagger specifications.
+
+
 ## API Requests & Rate Limits
 
 The timeout for API requests through adobe.io is currently *60 seconds*.
