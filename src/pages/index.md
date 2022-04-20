@@ -25,10 +25,7 @@ Read API documentation and download OpenAPI / Swagger specifications.
 
 ## Tutorials
 
-[Learn how to author jobs](jobs/tutorial) 
-
-Read API documentation and download OpenAPI / Swagger specifications.
-
+- [Learn how to author jobs](jobs/tutorial) 
 
 ## API Requests & Rate Limits
 

@@ -34,8 +34,9 @@ We'll use the operation `https.download` to instruct the service on how to retri
 "step1-download": {
   "type": "https.download",
   "parameters": {
-    "uri": "https://some-bucket.s3.us-east-1.amazonaws.com/some/blob?TOKEN",
-    "fileType": {
+    "uri": "https://some-bucket.s3.us-east-1.amazonaws.com/some/blob?TOKEN"
+   },
+   "output": {
       "type": "scene",
       "extension": ".ssg"
     }
@@ -58,6 +59,10 @@ In this instance, we've set `.inputs.scene` to `step1-download`. This means the 
   "type": "scene.render",
   "inputs": {
     "scene": "step1-download"
+  },
+  "output": {
+    "type": "scene",
+    "extension": ".ssg"
   }
 }
 ```
@@ -92,18 +97,22 @@ With each of the operations written, we can now combine them into a full job des
     "step1-download": {
       "type": "https.download",
       "parameters": {
-        "uri": "https://some-bucket.s3.us-east-1.amazonaws.com/some/blob?TOKEN",
-        "fileType": {
-          "type": "scene",
-          "extension": ".ssg"
-        }
+        "uri": "https://some-bucket.s3.us-east-1.amazonaws.com/some/blob?TOKEN"
+      },
+      "output": {
+        "type": "scene",
+        "extension": ".ssg"
       }
     },
     "step2-render": {
       "type": "scene.render",
       "inputs": {
         "scene": "step1-download"
-      }
+      },
+      "output": {
+        "type": "image",
+        "extension": ".png"
+      }      
     },
     "step3-upload": {
       "type": "https.azure.upload",
@@ -114,7 +123,6 @@ With each of the operations written, we can now combine them into a full job des
         "file": "step2-render"
       }
     }
-    
   }
 }
 ```
